@@ -21,7 +21,7 @@
 
     <build>
         <plugins>
-            <!--<plugin>
+            <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <version>${springboot.version}</version>
@@ -29,7 +29,7 @@
                     <mainClass>org.springframework.boot.loader.WarLauncher</mainClass>
                     <addResources>true</addResources>
                 </configuration>
-            </plugin>-->
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
@@ -83,8 +83,29 @@
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.46</version>
         </dependency>
+        <!--服务注册-->
+        <!--Jpa这种方式，通过Java持久层API来实现数据保存到数据库，可以是Mysql、Oracle、SQL Service这种方式可能使用的比较多一些-->
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-support-jpa-service-registry</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
 
+        <!-- Services Management -->
 
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-core-services-api</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
+
+        <!-- Authentication Attributes -->
+
+        <dependency>
+            <groupId>org.apereo.cas</groupId>
+            <artifactId>cas-server-core-authentication-attributes</artifactId>
+            <version>${cas.version}</version>
+        </dependency>
         <!--<dependency>
             <groupId>org.jasig.cas</groupId>
             <artifactId>cas-server-core-authentication</artifactId>
